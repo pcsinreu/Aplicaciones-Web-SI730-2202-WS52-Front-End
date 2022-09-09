@@ -4,7 +4,7 @@ import es from './es.json'
 import tr from './tr.json'
 
 const i18n = createI18n({ //Setup
-    locale: "tr",
+    locale: "es",
     messages :{
       en,
       es,

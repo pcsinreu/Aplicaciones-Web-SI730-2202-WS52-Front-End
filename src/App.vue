@@ -17,7 +17,7 @@ export default {
   <form>
     <div class="card">
       <div class="field grid">
-        <label class="col-3 mb-2" for="code">Codigo*</label>
+        <label class="col-3 mb-2" for="code">{{ $t("code") }}</label>
         <div class="col-7 p-0">
           <InputText id="code" />
         </div>
@@ -26,11 +26,11 @@ export default {
         </div>
       </div>
       <div class="field grid">
-        <label for="nombre" class="col-3 mb-2" >Nombre*</label>
+        <label for="nombre" class="col-3 mb-2" >{{ $t("name") }}</label>
         <div class="9"> <InputText id="nombre" class="w-full" /></div>
       </div>
       <div class="field grid">
-        <label for="Telefono" class="col-3 mb-2">Telefono*</label>
+        <label for="Telefono" class="col-3 mb-2">{{ $t("phone") }}</label>
         <div class=9> <InputMask id="Telefono" v-model="value" mask="a9-99999a" class="w-full" /></div>
       </div>
       <div class="field grid">

@@ -16,6 +16,9 @@ export default {
 <template>
   <form>
     <div class="card">
+      <h1>
+        {{ $t("greeting", {name :"Pedro" } ) }}
+      </h1>
       <div class="field grid">
         <label class="col-3 mb-2" for="code">{{ $t("code") }}</label>
         <div class="col-7 p-0">
@@ -43,6 +46,9 @@ export default {
           class="w-full"
         ></pv-dropdown></div>
       </div>
+      <h2>
+          {{ $tc("product",0) }}
+      </h2>
     </div>
   </form>
 </template>

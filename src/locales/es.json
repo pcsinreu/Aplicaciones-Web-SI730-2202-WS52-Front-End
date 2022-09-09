@@ -1,5 +1,7 @@
 {
   "code": "Código",
   "name": "Nombre",
-  "phone": "Telefono"
+  "phone": "Telefono",
+  "greeting": "Hola, {name}",
+  "product": "ningún producto | un producto | productos"
 }

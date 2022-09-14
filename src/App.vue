@@ -1,4 +1,6 @@
 <script>
+import { CommentsServices } from "@/services/coments-services";
+
 export default {
   data() {
     return {
@@ -10,6 +12,14 @@ export default {
       ],
     };
   },
+   created() {
+     new CommentsServices().getComments()
+       .then(response =>{
+         console.log("invocando API")
+          console.log(response.status)
+          console.log(response.data)
+       })
+  }
 };
 </script>
 

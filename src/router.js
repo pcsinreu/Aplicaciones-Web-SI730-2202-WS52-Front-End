@@ -6,6 +6,7 @@ import Product from './components/Product.vue';
 import Comment from './components/Comment.vue';
 import Post from './components/Post.vue';
 import NewComment from './components/comment.new.vue';
+import Login from "@/components/Login.vue";
 
 
 const routes = [ //definimos rutas
@@ -14,6 +15,7 @@ const routes = [ //definimos rutas
   { path: '/comment', component: Comment },
   { path: '/newcomment', component: NewComment },
   { path: '/post', component: Post },
+  { path: '/login', component: Login },
 ]
 
 const history = createWebHistory();

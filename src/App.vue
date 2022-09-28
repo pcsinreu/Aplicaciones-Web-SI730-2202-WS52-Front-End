@@ -12,6 +12,7 @@ export default {
     <router-link to="/product">Product</router-link>
     <router-link to="/comment">Comment</router-link>
     <router-link to="/post">Post</router-link>
+    <router-link to="/login">Login</router-link>
   </nav>
 
   <main>

@@ -32,6 +32,10 @@ export default {
   created() {
     new CommentsServices().getComments().then(response =>  {
         this.comments = response.data
+        localStorage.setItem("comments","comentario") //Insertar - modificar
+        localStorage.setItem("comments2","comentario2") //Insertar - modificar
+        sessionStorage.setItem("comments3","comentario3") //Insertar - modificar3
+      sessionStorage.removeItem("comments2")
     })
   }
 };

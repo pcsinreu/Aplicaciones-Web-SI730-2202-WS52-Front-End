@@ -4,8 +4,12 @@
 
 <script>
 export default {
-  name: "Post"
-};
+  name: "Post",
+  created() {
+    console.log(localStorage.getItem("comments") )
+  }
+}
+;
 </script>
 
 <style scoped>

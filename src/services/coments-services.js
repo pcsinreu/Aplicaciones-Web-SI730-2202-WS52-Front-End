@@ -1,14 +1,20 @@
 import axios from 'axios'
 
+const http = axios.create({
+    baseURL:"http://localhost:3000/660/",
+    headers:{
+      "Authorization": "Bearer "+ sessionStorage.getItem("jwt")
+    }
+})
+
 export class CommentsServices {
 
     getComments = () => {
-      return axios.get("http://localhost:3000/comments")
+      return http.get("comments")
     }
 
-    postComment =(body,postId) =>{
-
-      return axios.post("http://localhost:3000/comments",
+    postComment =(body,postId) => {
+      return http.post("comments",
         {
           "body": body,
           "postId": postId
@@ -16,11 +22,11 @@ export class CommentsServices {
     }
 
     deleteComment(id) {
-      return axios.delete("http://localhost:3000/comments/" + id);
+      return http.delete("comments/" + id);
     }
 
     putComment(id,body,postId) {
-      return axios.patch("http://localhost:3000/comments/" + id,{
+      return http.patch("comments/" + id,{
         "body": body,
         "postId": postId
       });

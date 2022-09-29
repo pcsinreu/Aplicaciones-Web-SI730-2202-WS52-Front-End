@@ -19,17 +19,21 @@ import 'primeicons/primeicons.css'
 import '/node_modules/primeflex/primeflex.css'
 //icons
 import router from "./router";
+import {createPinia} from "pinia";
+
+const pinia = createPinia();
 
 const app = createApp(App);
 
 app.use(PrimeVue);
 app.use(i18n); //inject
 app.use(router);
+app.use(pinia);
 
 app.component('pv-button', Button);
-app.component('InputText', InputText);
-app.component('InputNumber', InputNumber);
-app.component('InputMask', InputMask);
+app.component('pv-inputText', InputText);
+app.component('pv-InputNumber', InputNumber);
+app.component('pv-inputMask', InputMask);
 app.component('pv-dropdown', Dropdown);
 app.component("pv-dataTable",DataTable);
 app.component("pv-column",Column);

@@ -7,7 +7,7 @@
       <div class="field grid">
         <label class="col-3 mb-2" for="code">{{ $t("code") }}</label>
         <div class="col-7 p-0">
-          <InputText id="code" />
+          <pv-inputText id="code" />
         </div>
         <div class="col-2">
           <pv-button label="validar" />
@@ -15,11 +15,11 @@
       </div>
       <div class="field grid">
         <label for="nombre" class="col-3 mb-2" >{{ $t("name") }}</label>
-        <div class="9"> <InputText id="nombre" class="w-full" /></div>
+        <div class="9"> <pv-inputText id="nombre" class="w-full" /></div>
       </div>
       <div class="field grid">
         <label for="Telefono" class="col-3 mb-2">{{ $t("phone") }}</label>
-        <div class=9> <InputMask id="Telefono" v-model="value" mask="a9-99999a" class="w-full" /></div>
+        <div class=9> <pv-inputMask id="Telefono" v-model="value" mask="a9-99999a" class="w-full" /></div>
       </div>
       <div class="field grid">
         <label for="category" class="col-3 mb-2">Cetegoría*</label>

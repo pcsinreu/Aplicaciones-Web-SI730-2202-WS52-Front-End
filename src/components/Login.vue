@@ -1,21 +1,25 @@
 <template>
 
-  <div class="field">
+  <form class="flex flex-column justify-content-center p-8 gap-4 m-4">
+    <div class="field flex flex-column  justify-content-center">
       <label for="email">Email</label>
-      <InputText id="email" v-model="email">
-      </InputText>
-  </div>
+      <pv-inputText id="email" v-model="email" />
+    </div>
 
-  <div class="field">
-      <label for="password">password</label>
-      <InputText id="password" v-model="password"></InputText>
-  </div>
+    <div class="field flex flex-column  justify-content-center">
+      <label for="password" class="col-2">Password</label>
+      <pv-inputText id="password" v-model="password" />
+    </div>
 
-    <pv-button @click="register"  > Registrar
-    </pv-button>
-
-    <pv-button @click="login"  > Login
-    </pv-button>
+    <div class="field grid justify-content-center gap-4">
+      <pv-button @click="register"> Registrar
+      </pv-button>
+      <pv-button @click="login"> Login
+      </pv-button>
+      <pv-button @click="logout"> Logout
+      </pv-button>
+    </div>
+  </form>
 
 </template>
 
@@ -25,23 +29,25 @@ import { usersServices } from "@/services/user-services";
 
 export default {
   name: "Login",
-  data(){
-    return{
-      email:"",
-      password:""
-    }
+  data() {
+    return {
+      email: "",
+      password: ""
+    };
   },
-  methods:{
-    register(){
-      new usersServices().register(this.email,this.password).then(response => console.log("usuario creado"));
+  methods: {
+    register() {
+      new usersServices().register(this.email, this.password).then(response => console.log("usuario creado"));
     },
-    login(){
-      new usersServices().login(this.email,this.password).then(response =>
-        sessionStorage.setItem("jwt",response.data.accessToken)
+    login() {
+      new usersServices().login(this.email, this.password).then(response =>
+        sessionStorage.setItem("jwt", response.data.accessToken)
       );
+    },
+    logout() {
+      sessionStorage.removeItem("jwt");
     }
   }
-
 
 
 };

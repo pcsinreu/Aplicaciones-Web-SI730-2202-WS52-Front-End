@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/newcomment">new comment</router-link>
+  <router-link to="/comment">new comment</router-link>
   <pv-dataTable :value="comments">
 
     <pv-column field="id" header="Id"></pv-column>
@@ -7,12 +7,11 @@
     <pv-column field="postId" header="Actions">
 
       <template #body="slotProps">
-        <div class="field grid justify-content-center gap-4">
+        <div class="field grid justify-content-center gap-4 justify-content-center">
           <pv-button @click="deleteComment(slotProps.data.id)">Eliminar</pv-button>
           <pv-button @click="editComment(slotProps.data.id)">Editar</pv-button>
         </div>
       </template>
-
     </pv-column>
   </pv-dataTable>
 </template>
@@ -21,7 +20,7 @@
 import { CommentsServices } from "@/services/coments-services";
 
 export default {
-  name: "Comment",
+  name: "Comments",
   data() {
     return {
       comments: null,
@@ -34,7 +33,7 @@ export default {
       this.getAllComments();
     },
     editComment: function(id) {
-      this.$router.push({ path: "editcomment", params: { id } });
+      this.$router.push({ path: `/comment/${id}` });
     },
     getAllComments: function() {
       this.commentsServices.getComments().then(response => {

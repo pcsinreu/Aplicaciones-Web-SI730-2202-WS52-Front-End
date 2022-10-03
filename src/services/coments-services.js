@@ -12,6 +12,7 @@ export class CommentsServices {
   getCommentById = (id) => {
     return http.get(`comments/${id}`);
   };
+
   getComments = () => {
     return http.get("comments");
   };
@@ -19,8 +20,8 @@ export class CommentsServices {
   postComment = (body, postId) => {
     return http.post("comments",
       {
-        "body": body,
-        "postId": postId
+        body,
+        postId
       });
   };
 
@@ -29,9 +30,9 @@ export class CommentsServices {
   }
 
   putComment(id, body, postId) {
-    return http.patch("comments/" + id, {
-      "body": body,
-      "postId": postId
+    return http.put("comments/" + id, {
+      body,
+      postId
     });
   }
 }

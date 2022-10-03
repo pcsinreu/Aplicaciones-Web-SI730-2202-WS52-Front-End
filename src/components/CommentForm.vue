@@ -1,7 +1,6 @@
 <template>
-
   <div class="flex flex-column gap-4 p-8">
-    <router-link to="/comment">back</router-link>
+    <router-link to="/comments">back</router-link>
     <form class="flex flex-column">
       <div class="field grid justify-content-center">
         <label for="body" class="col-2">Body</label>
@@ -23,10 +22,10 @@ import { CommentsServices } from "@/services/coments-services";
 import { PostsServices } from "@/services/post-services";
 
 export default {
-
   name: "comment.new",
   data() {
     return {
+      id: 0,
       body: "",
       seletedPost: "",
       posts: null,
@@ -36,21 +35,45 @@ export default {
   },
   methods: {
     save: function() {
+      if (this.id == 0) {
+        this.new();
+      } else {
+        this.edit();
+      }
+    },
+    edit: function() {
+      this.commentsServices.putComment(this.id, this.body, this.seletedPost.id).then(
+        this.$router.push("/comments")
+      );
+    },
+    new: function() {
       this.commentsServices.postComment(this.body, this.seletedPost.id).then(
-        this.$router.push("/comment")
+        this.$router.push("/comments")
       );
     }
   },
   created() {
-    console.log("id",this.$router)
-    this.commentsServices.getCommentById(12).then(response => console.log(response))
 
-    this.postsServices.getPots().then(response => {
-      this.posts = response.data;
-    });
+    this.postsServices.getPots()
+      .then(response => {
+        this.posts = response.data;
+      });
+
+  },
+  mounted() {
+    if (this.$route.params.id) {
+      this.id = this.$route.params.id;
+      this.commentsServices.getCommentById(this.id).then(response => {
+          this.body = response.data.body;
+          this.seletedPost = this.posts.find(post => post.id === response.data.postId);
+        }
+      );
+    }
   }
+}
+;
 
-};
+
 </script>
 
 <style scoped>

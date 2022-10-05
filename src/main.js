@@ -9,6 +9,9 @@ import Dropdown from 'primevue/dropdown';
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
 import ToastService from 'primevue/toastservice';
+import Image from 'primevue/image';
+import Card from 'primevue/card';
+
 
 import i18n from './locales/i18n';
 import PrimeVue from 'primevue/config';
@@ -39,5 +42,8 @@ app.component('pv-inputMask', InputMask);
 app.component('pv-dropdown', Dropdown);
 app.component("pv-dataTable",DataTable);
 app.component("pv-column",Column);
+app.component("pv-image",Image);
+app.component("pv-card",Card);
+
 
 app.mount('#app')

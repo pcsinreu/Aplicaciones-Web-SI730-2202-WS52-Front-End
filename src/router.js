@@ -8,6 +8,8 @@ import Post from './components/post-list.component.vue';
 import CommentForm from './components/comment-form.component.vue';
 import Login from "@/components/Login.component.vue";
 import notFoundComponent from "@/components/not-found.component.vue";
+import userListComponent from "@/components/user-list.component.vue";
+
 
 const routes = [ //definimos rutas
   { path: '/', component: Home },
@@ -17,6 +19,7 @@ const routes = [ //definimos rutas
   { path: '/comment/:id', component: CommentForm},
   { path: '/post', component: Post },
   { path: '/login', component: Login },
+  { path: '/users', component: userListComponent },
   { path: '/:catchAll(.*)', component: notFoundComponent },
 ]
 

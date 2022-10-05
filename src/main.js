@@ -8,7 +8,7 @@ import InputMask from 'primevue/inputmask';
 import Dropdown from 'primevue/dropdown';
 import DataTable from 'primevue/datatable';
 import Column from 'primevue/column';
-
+import ToastService from 'primevue/toastservice';
 
 import i18n from './locales/i18n';
 import PrimeVue from 'primevue/config';
@@ -29,6 +29,8 @@ app.use(PrimeVue);
 app.use(i18n); //inject
 app.use(router);
 app.use(pinia);
+app.use(ToastService);
+
 
 app.component('pv-button', Button);
 app.component('pv-inputText', InputText);

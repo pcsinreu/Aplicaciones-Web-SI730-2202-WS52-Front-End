@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import { usersServices } from "@/services/user-services";
+import { usersServices } from "@/services/user-api.service";
 
 
 export default {

@@ -18,8 +18,8 @@
 </template>
 
 <script>
-import { CommentsServices } from "@/services/coments-services";
-import { PostsServices } from "@/services/post-services";
+import { CommentsServices } from "@/services/coments-api.service";
+import { PostsServices } from "@/services/post-api.service";
 
 export default {
   name: "comment.new",

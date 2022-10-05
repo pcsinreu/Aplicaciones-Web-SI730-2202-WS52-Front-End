@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { CommentsServices } from "@/services/coments-services";
+import { CommentsServices } from "@/services/coments-api.service";
 
 export default {
   name: "Comments",

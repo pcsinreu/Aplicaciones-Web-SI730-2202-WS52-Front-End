@@ -1,13 +1,13 @@
 import { createRouter,createWebHistory  } from "vue-router"; //Vue vite
 
-import Home from './components/Home.vue';
+import Home from './components/home-content.component.vue';
 import About from './components/About.vue'
-import Product from './components/Product.vue';
-import Comment from './components/Comments.vue';
-import Post from './components/Post.vue';
-import CommentForm from './components/CommentForm.vue';
-import Login from "@/components/Login.vue";
-
+import Product from './components/product-form.component.vue';
+import Comment from './components/comments-list.component.vue';
+import Post from './components/post-list.component.vue';
+import CommentForm from './components/comment-form.component.vue';
+import Login from "@/components/Login.component.vue";
+import notFoundComponent from "@/components/not-found.component.vue";
 
 const routes = [ //definimos rutas
   { path: '/', component: Home },
@@ -17,6 +17,7 @@ const routes = [ //definimos rutas
   { path: '/comment/:id', component: CommentForm},
   { path: '/post', component: Post },
   { path: '/login', component: Login },
+  { path: '/:catchAll(.*)', component: notFoundComponent },
 ]
 
 const history = createWebHistory();
